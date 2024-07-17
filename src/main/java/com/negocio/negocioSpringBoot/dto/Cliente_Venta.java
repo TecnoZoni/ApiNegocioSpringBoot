@@ -1,11 +1,12 @@
 package com.negocio.negocioSpringBoot.dto;
 
+import java.io.Serializable;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class Cliente_Venta {
+public class Cliente_Venta implements Serializable{
 
     private Long codigo_venta;
     private Double total;

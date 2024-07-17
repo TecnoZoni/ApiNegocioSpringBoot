@@ -1,5 +1,6 @@
 package com.negocio.negocioSpringBoot.service;
 
+import com.negocio.negocioSpringBoot.dto.Cliente_Venta;
 import com.negocio.negocioSpringBoot.model.Producto;
 import com.negocio.negocioSpringBoot.model.Venta;
 import java.time.LocalDate;
@@ -20,4 +21,6 @@ public interface IVentaService {
     public List<Producto> productosVenta(Long id_venta);
 
     public String ventasDia(LocalDate fecha_venta);
+    
+    public Cliente_Venta ventaMayor();
 }
