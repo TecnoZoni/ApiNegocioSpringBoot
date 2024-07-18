@@ -1,6 +1,7 @@
 package com.negocio.negocioSpringBoot.service;
 
 import com.negocio.negocioSpringBoot.dto.Cliente_Venta;
+import com.negocio.negocioSpringBoot.model.Cliente;
 import com.negocio.negocioSpringBoot.model.Producto;
 import com.negocio.negocioSpringBoot.model.Venta;
 import com.negocio.negocioSpringBoot.repository.IVentaRepository;
@@ -32,8 +33,15 @@ public class VentaService implements IVentaService {
     }
     
     @Override
-    public void editarVenta(Venta venta) {
-        ventaRepo.save(venta);
+    public void editarVenta(Long codigo_venta, LocalDate nuevaFecha_venta, Double nuevoTotal, List<Producto> nuevaListaProductos, Cliente nuevoCliente) {
+        Venta vent = this.traerVenta(codigo_venta);
+        
+        vent.setFecha_venta(nuevaFecha_venta);
+        vent.setTotal(nuevoTotal);
+        vent.setListaProductos(nuevaListaProductos);
+        vent.setUnCliente(nuevoCliente);
+        
+        this.crearVenta(vent);
     }
     
     @Override

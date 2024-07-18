@@ -11,7 +11,7 @@ public interface IClienteService {
 
     public Cliente traerCliente(Long id_cliente);
 
-    public void editarCliente(Cliente cliente);
+    public void editarCliente(Long id_cliente, String nuevoNombre, String nuevoApellido, String nuevoDni);
     
     public void eliminarCliente(Long id_cliente);
 

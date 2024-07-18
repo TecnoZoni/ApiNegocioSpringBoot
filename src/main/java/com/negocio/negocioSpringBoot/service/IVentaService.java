@@ -1,6 +1,7 @@
 package com.negocio.negocioSpringBoot.service;
 
 import com.negocio.negocioSpringBoot.dto.Cliente_Venta;
+import com.negocio.negocioSpringBoot.model.Cliente;
 import com.negocio.negocioSpringBoot.model.Producto;
 import com.negocio.negocioSpringBoot.model.Venta;
 import java.time.LocalDate;
@@ -14,7 +15,7 @@ public interface IVentaService {
 
     public Venta traerVenta(Long id_venta);
 
-    public void editarVenta(Venta venta);
+    public void editarVenta(Long codigo_venta, LocalDate nuevaFecha_venta, Double nuevoTotal, List<Producto> nuevaListaProductos, Cliente nuevoCliente);
 
     public void eliminarVenta(Long id_venta);
 

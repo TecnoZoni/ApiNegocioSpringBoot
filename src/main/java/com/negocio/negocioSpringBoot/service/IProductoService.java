@@ -11,7 +11,7 @@ public interface IProductoService {
 
     public Producto traerProducto(Long id_producto);
 
-    public void editarProducto(Producto producto);
+    public void editarProducto(Long codigo_producto, String nuevoNombre, String nuevaMarca, Double nuevoCosto, Double nuevaCantidad_disponible);
 
     public void eliminarProducto(Long id_producto);
 
