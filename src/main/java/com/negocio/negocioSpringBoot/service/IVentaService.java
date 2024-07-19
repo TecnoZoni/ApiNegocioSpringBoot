@@ -15,7 +15,7 @@ public interface IVentaService {
 
     public Venta traerVenta(Long id_venta);
 
-    public void editarVenta(Long codigo_venta, LocalDate nuevaFecha_venta, Double nuevoTotal, List<Producto> nuevaListaProductos, Cliente nuevoCliente);
+    public void editarVenta(Long codigo_venta, Double nuevoTotal, List<Producto> nuevaListaProductos, Cliente nuevoCliente);
 
     public void eliminarVenta(Long id_venta);
 

@@ -33,10 +33,9 @@ public class VentaService implements IVentaService {
     }
     
     @Override
-    public void editarVenta(Long codigo_venta, LocalDate nuevaFecha_venta, Double nuevoTotal, List<Producto> nuevaListaProductos, Cliente nuevoCliente) {
+    public void editarVenta(Long codigo_venta, Double nuevoTotal, List<Producto> nuevaListaProductos, Cliente nuevoCliente) {
         Venta vent = this.traerVenta(codigo_venta);
         
-        vent.setFecha_venta(nuevaFecha_venta);
         vent.setTotal(nuevoTotal);
         vent.setListaProductos(nuevaListaProductos);
         vent.setUnCliente(nuevoCliente);
@@ -65,7 +64,7 @@ public class VentaService implements IVentaService {
         List<Venta> listaVentas = this.traerVentas();
         
         for (Venta venta : listaVentas) {
-            if (venta.getFecha_venta() == fecha_venta) {
+            if (venta.getFecha_venta().equals(fecha_venta)) {
                 ventas = ventas + 1;
                 totalVentas = totalVentas + venta.getTotal();
             }
@@ -78,6 +77,7 @@ public class VentaService implements IVentaService {
     public Cliente_Venta ventaMayor() {
         List<Venta> listaVentas = this.traerVentas();
         Venta ventaMayor = new Venta();
+        ventaMayor.setTotal((double) 0);
         Cliente_Venta datosVenta = new Cliente_Venta();
         
         for (Venta venta : listaVentas) {
